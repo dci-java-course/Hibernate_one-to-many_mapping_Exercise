@@ -1,4 +1,4 @@
-# Exercise #  - Hibernate One to Many Mapping Relationship
+# Exercise # 4 - Hibernate One to Many Mapping Relationship
 
 In this exercise, you are going to implement bi-directional One-to-Many mapping between persisted objects using @OneToMany annotation.  
 A one-to-many relationships occurs when one entity is related to multiple occurrences of another entity.
