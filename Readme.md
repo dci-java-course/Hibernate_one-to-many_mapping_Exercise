@@ -8,7 +8,7 @@ A one-to-many relationships occurs when one entity is related to multiple occurr
 ```
 CREATE TABLE EMPLOYEES (
 
-    EMP_ID BIGINT NOT NULL AUTO_INCREMENT,
+    EMP_ID SERIAL,
     NAME VARCHAR(252),
     DEPARTMENT VARCHAR(128),
     SALARY BIGINT,
@@ -17,8 +17,8 @@ CREATE TABLE EMPLOYEES (
 );
 CREATE TABLE ASSET_MNGT (
 
-    AM_ID BIGINT NOT NULL AUTO_INCREMENT,
-    EMP_ID BIGINT,
+    AM_ID SERIAL,
+    EMP_ID SERIAL,
     ASSET_NAME VARCHAR(128),
     VENDOR VARCHAR(128),
     PRIMARY KEY (AM_ID),
@@ -41,6 +41,11 @@ INSERT INTO ASSET_MNGT (EMP_ID, ASSET_NAME, VENDOR) VALUES (2, 'LCD Monitor', 'H
 INSERT INTO ASSET_MNGT (EMP_ID, ASSET_NAME, VENDOR) VALUES (3, 'Laptop', 'Apple');
 INSERT INTO ASSET_MNGT (EMP_ID, ASSET_NAME, VENDOR) VALUES (3, 'Mobile', 'Samsung');
 INSERT INTO ASSET_MNGT (EMP_ID, ASSET_NAME, VENDOR) VALUES (4, 'Laptop', 'Apple');
+```
+
+Additionally create a sequence named 'hibernate_sequence'
+```
+  CREATE SEQUENCE hibernate_sequence START 5;
 ```
 
 Our tables are already One-to-Many mapped. We have created EMPLOYEES AND ASSET_MNGT tables. EMPLOYEES is our primary table and we are using Foreign Key in ASSET_MNGT table for One-to-Many mapping.
